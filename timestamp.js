@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3000; //used for heroku
 
 var app = express();
 app.use(express.static('./public'));
-app.listen(PORT, () => { console.log('Express server is up on port', PORT) });
+app.listen(PORT, () => console.log('Express server is up on port', PORT));
 
 const unixToNatural = (i) => moment.unix(i).format('MMMM D, YYYY HH:mm:ss');
 

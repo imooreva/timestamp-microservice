@@ -1,10 +1,45 @@
 body {
-    background: #333333;
+    background: #262626;
     color: #22BBFF;
     font-family: 'Raleway', sans-serif;
     font-size: 1.0rem;
 }
 
 p {
-    color: #BAFCC0;
+    color: #E7FEFE;
+}
+
+#hr-1 {
+    border: 1px solid #777777;
+    margin-top: 2rem;
+}
+
+#footer {
+    margin-top: 2rem;
+}
+
+#footer>a {
+    color: #FF8B4D;
+    text-decoration: none;
+}
+
+#footer>a:hover {
+    text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 420px) {
+    #heading-1 {
+        font-size: 1.5rem;
+    }
+    #heading-2 {
+        font-size: 1.125rem;
+    }
+    body {
+        font-size: 0.875rem;
+    }
+
+    #hr-1, #footer {
+        margin-top: 1.25rem
+    }
 }

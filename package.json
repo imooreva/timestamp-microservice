@@ -1,13 +1,23 @@
 {
   "name": "timestamp-microservice",
   "version": "1.0.0",
+  "engines": {
+      "node": "6.9.2"  
+  },
   "description": "",
-  "main": "timestamp.js",
+  "main": "server.js",
   "scripts": {
-      "start": "node timestamp.js"
+      "start": "node server.js"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/imooreva/timestamp-microservice"
   },
   "author": "Ian Moore",
   "license": "ISC",
+  "bugs": {
+      "url": "https://github.com/imooreva/timestamp-microservice/issues"
+  },
   "dependencies": {
     "express": "^4.14.0",
     "moment": "^2.17.1"

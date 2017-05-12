@@ -1,12 +1,12 @@
-const express = require('express');
-const moment = require('moment')
+var express = require('express');
+var moment = require('moment')
 
 //configure express app and start listening
 var app = express();
 const PORT = process.env.PORT || 3000; //used for heroku
 
 app.use(express.static('./public'));
-app.listen(PORT, () => console.log('Express server is up on port', PORT));
+if (!module.parent) { app.listen(PORT, () => console.log(`Started up on port ${PORT}`)) }; //conditional statement prevents EADDRINUSE error when running mocha/supertest
 
 //function for converting unix timestamps to natural date format 
 var unixToNatural = (i) => moment.unix(i).format('MMMM D, YYYY HH:mm:ss');
@@ -37,3 +37,6 @@ app.get('/:id', (req,res) => {
     //send results as JSON to client
     res.send({ unix, natural });
 });
+
+//handle console error by sending status code 204 for icon file
+app.get('/favicon.ico', (req, res) => res.sendStatus(204));
